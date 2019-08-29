@@ -1,0 +1,17 @@
+type User
+@goModel(model:"gqlgorm/models.User")
+{
+    id:   Int!
+    createdAt: Time!
+    updatedAt: Time!
+    username: String!
+    password: String!
+    roleID: Int!
+    role: Role!
+}
+input NewUser {
+    username: String!
+    password: String!
+    roleId: Int!
+}
+

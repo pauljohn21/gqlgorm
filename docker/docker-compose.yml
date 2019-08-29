@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: root123456
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+      --max_allowed_packet=128M
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis/data:/data
+    command:
+      redis-server
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo/data:/data/db
+      - ./mongo/configdb:/data/configdb

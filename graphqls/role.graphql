@@ -1,0 +1,12 @@
+type Role
+@goModel(model:"gqlgorm/models.Role")
+{
+    id: Int!
+    createdAt: Time
+    updatedAt: Time
+    name: String!
+}
+
+input NewRole {
+    name: String!
+}

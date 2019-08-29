@@ -1,0 +1,10 @@
+
+type Query {
+    todos: [Todo!]!
+    users: [User!]!
+    roles: [Role!]!
+    login(username: String!,password: String!): User!
+    userfindbyid(id: Int!):User!
+
+    todo(input: FetchTodo): Todo!
+}

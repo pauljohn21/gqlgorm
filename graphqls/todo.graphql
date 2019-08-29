@@ -1,0 +1,29 @@
+
+type Todo
+@goModel(model:"gqlgorm/models.Todo")
+{
+    id:   Int!
+    createdAt: Time!
+    updatedAt: Time!
+    text: String!
+    done: Boolean!
+    userID: Int!
+    user: User!
+
+}
+
+input NewTodo {
+    text: String!
+    userId: Int!
+}
+
+input EditTodo {
+    id: Int!
+    text: String!
+}
+
+
+
+input FetchTodo {
+    id: Int!
+}
